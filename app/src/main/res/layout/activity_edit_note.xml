@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:id="@+id/scrollview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="150dp">
+
+            <include
+                android:id="@+id/toolbar"
+                layout="@layout/toolbar" />
+
+            <ImageView
+                android:id="@+id/noteImage"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginLeft="24dp"
+                android:layout_marginTop="24dp"
+                android:contentDescription="@string/note_image"
+                android:src="@drawable/default_note_image"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+            <EditText
+                android:id="@+id/noteTitle"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:autofillHints="@string/title"
+                android:hint="@string/title"
+                android:inputType="textPersonName"
+                app:layout_constraintStart_toEndOf="@+id/noteImage"
+                app:layout_constraintTop_toTopOf="@+id/noteImage" />
+
+            <Spinner
+                android:id="@+id/noteListSpinner"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                app:layout_constraintBottom_toBottomOf="@+id/noteImage"
+                app:layout_constraintStart_toStartOf="@+id/noteTitle"
+                app:layout_constraintTop_toBottomOf="@+id/noteTitle" />
+
+            <EditText
+                android:id="@+id/explanationText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginLeft="24dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginRight="24dp"
+                android:autofillHints="@string/explanation"
+                android:gravity="start|top"
+                android:hint="@string/explanation"
+                android:inputType="textMultiLine"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/noteImage"
+                app:layout_constraintTop_toBottomOf="@+id/noteImage" />
+
+            <TextView
+                android:id="@+id/completionDateText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:autofillHints="@string/completion_date"
+                android:hint="@string/completion_date"
+                app:layout_constraintStart_toStartOf="@+id/explanationText"
+                app:layout_constraintTop_toBottomOf="@+id/explanationText" />
+
+            <TextView
+                android:id="@+id/notificationDateText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:autofillHints="@string/notificationDate"
+                android:hint="@string/notificationDate"
+                app:layout_constraintStart_toStartOf="@+id/completionDateText"
+                app:layout_constraintTop_toBottomOf="@+id/completionDateText" />
+
+            <TextView
+                android:id="@+id/stepsList"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="48dp"
+                android:text="@string/stepsList"
+                app:layout_constraintStart_toStartOf="@+id/notificationDateText"
+                app:layout_constraintTop_toBottomOf="@+id/notificationDateText" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/stepsRecyclerView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/stepsList">
+
+            </androidx.recyclerview.widget.RecyclerView>
+
+            <Button
+                android:id="@+id/completionDateButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/change"
+                app:layout_constraintBottom_toBottomOf="@+id/completionDateText"
+                app:layout_constraintEnd_toEndOf="@+id/explanationText"
+                app:layout_constraintTop_toTopOf="@+id/completionDateText" />
+
+            <Button
+                android:id="@+id/notificationDateButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/change"
+                app:layout_constraintBottom_toBottomOf="@+id/notificationDateText"
+                app:layout_constraintEnd_toEndOf="@+id/completionDateButton"
+                app:layout_constraintTop_toTopOf="@+id/notificationDateText"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <Button
+                android:id="@+id/addStepButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="24dp"
+                android:layout_marginRight="24dp"
+                android:text="@string/add_step"
+                app:layout_constraintBottom_toBottomOf="@+id/stepsList"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/stepsList" />
+
+            <ImageButton
+                android:id="@+id/editImageButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginLeft="32dp"
+                android:layout_marginBottom="38dp"
+                android:contentDescription="@string/note_image"
+                app:layout_constraintBottom_toBottomOf="@+id/noteImage"
+                app:layout_constraintStart_toStartOf="@+id/noteImage"
+                app:srcCompat="@drawable/ic_edit_24dp" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

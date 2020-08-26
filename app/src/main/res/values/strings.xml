@@ -1,0 +1,37 @@
+<resources>
+    <string name="app_name">My notes</string>
+    <string name="channel_name">Channel 1</string>
+    <string name="channel_description">Channel description</string>
+    <string name="planed">Запланировано</string>
+    <string name="notes">Задачи</string>
+    <string name="title">Заголовок</string>
+    <string name="explanation">Пояснение задачи</string>
+    <string name="completion_date">Дата выполнения</string>
+    <string name="note_image">Note image</string>
+    <string name="notificationDate">Дата напоминания</string>
+    <string name="stepsList">Список шагов</string>
+    <string name="progress">0/0</string>
+    <string name="date">00.00.0000</string>
+    <string name="step">Шаг</string>
+    <string name="note_list_name">Название списка заметок</string>
+    <string name="enter_name">Введите название</string>
+    <string name="new_note">Новая заметка</string>
+    <string name="editing">Редактирование</string>
+    <string name="rename">Переименовать</string>
+    <string name="delete">Удалить</string>
+    <string name="cancel">Отмена</string>
+    <string name="save">Сохранить</string>
+    <string name="edit_purpose">Редактировать</string>
+    <string name="create_purpose">Создать</string>
+    <string name="apply">Применить</string>
+    <string name="edit_hint">Редактировать</string>
+    <string name="change">Изменить</string>
+    <string name="switch_sort_direction">Изменить направление сортировки</string>
+    <string name="my_shared_preferences">my_shared_preferences</string>
+    <string name="add_step">Добавить шаг</string>
+    <string name="enter_note_title">Введите название заметки!</string>
+    <string name="list_created">Список создан</string>
+    <string name="note_created">Заметка создана</string>
+    <string name="note_edited">Заметка отредактирована</string>
+    <string name="list_edited">Список переименован</string>
+</resources>

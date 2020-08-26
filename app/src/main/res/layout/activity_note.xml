@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar" />
+
+    <ImageView
+        android:id="@+id/noteImage"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="24dp"
+        android:contentDescription="@string/note_image"
+        android:src="@drawable/default_note_image"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+    <CheckBox
+        android:id="@+id/checkBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:layout_marginRight="24dp"
+        app:layout_constraintBottom_toBottomOf="@+id/noteTitle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/noteTitle" />
+
+    <TextView
+        android:id="@+id/noteTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:text="@string/title"
+        app:layout_constraintBottom_toBottomOf="@+id/noteImage"
+        app:layout_constraintStart_toEndOf="@+id/noteImage"
+        app:layout_constraintTop_toTopOf="@+id/noteImage" />
+
+    <TextView
+        android:id="@+id/explanationText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="24dp"
+        android:gravity="start|top"
+        android:text="@string/explanation"
+        app:layout_constraintStart_toStartOf="@+id/noteImage"
+        app:layout_constraintTop_toBottomOf="@+id/noteImage" />
+
+    <TextView
+        android:id="@+id/completionDateText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/completion_date"
+        app:layout_constraintStart_toStartOf="@+id/explanationText"
+        app:layout_constraintTop_toBottomOf="@+id/explanationText" />
+
+    <TextView
+        android:id="@+id/notificationDateText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/notificationDate"
+        app:layout_constraintStart_toStartOf="@+id/completionDateText"
+        app:layout_constraintTop_toBottomOf="@+id/completionDateText" />
+
+    <TextView
+        android:id="@+id/stepsList"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/stepsList"
+        app:layout_constraintStart_toStartOf="@+id/notificationDateText"
+        app:layout_constraintTop_toBottomOf="@+id/notificationDateText" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/stepsRecyclerView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/stepsList" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
